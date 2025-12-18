@@ -1,5 +1,297 @@
 <!doctype html>
-<html>
-  <head><meta charset="utf-8"><title>My Site</title></head>
-  <body><h1>Hello from GitHub Pages 👋</h1></body>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Won Ko</title>
+
+  <!-- Fonts + Icons -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <style>
+    :root{
+      --bg:#ffffff;
+      --text:#1f2937;
+      --muted:#6b7280;
+      --line:#e5e7eb;
+      --link:#1f6feb; /* GitHub-ish blue */
+      --card:#ffffff;
+      --shadow: 0 6px 18px rgba(17,24,39,.06);
+      --radius: 16px;
+      --maxw: 1100px;
+      --sidebar: 280px;
+    }
+
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0;
+      font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";
+      color:var(--text);
+      background:var(--bg);
+      line-height:1.55;
+    }
+
+    /* Top nav */
+    .topbar{
+      position:sticky;
+      top:0;
+      z-index:10;
+      background:rgba(255,255,255,.92);
+      backdrop-filter: blur(10px);
+      border-bottom:1px solid var(--line);
+    }
+    .topbar-inner{
+      max-width:var(--maxw);
+      margin:0 auto;
+      padding:14px 18px;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:16px;
+    }
+    .brand{
+      font-weight:700;
+      letter-spacing:-0.02em;
+      color:var(--text);
+      text-decoration:none;
+      font-size:16px;
+    }
+    nav a{
+      color:var(--muted);
+      text-decoration:none;
+      font-weight:500;
+      margin-left:18px;
+    }
+    nav a:hover{color:var(--text)}
+    nav a.active{color:var(--text)}
+
+    /* Layout */
+    .wrap{
+      max-width:var(--maxw);
+      margin:0 auto;
+      padding:28px 18px 60px;
+    }
+    .grid{
+      display:grid;
+      grid-template-columns: var(--sidebar) 1fr;
+      gap:26px;
+      align-items:start;
+    }
+
+    /* Sidebar card */
+    .card{
+      background:var(--card);
+      border:1px solid var(--line);
+      border-radius:var(--radius);
+      box-shadow:var(--shadow);
+    }
+    .sidebar{
+      padding:22px;
+      position:sticky;
+      top:74px; /* below sticky topbar */
+    }
+    .avatar{
+      width:140px;
+      height:140px;
+      border-radius:999px;
+      object-fit:cover;
+      border:5px solid #fff;
+      box-shadow: 0 10px 22px rgba(17,24,39,.10);
+      display:block;
+      margin:0 auto 14px;
+      background:#f3f4f6;
+    }
+    .name{
+      text-align:center;
+      font-size:20px;
+      font-weight:800;
+      margin:6px 0 4px;
+      letter-spacing:-0.02em;
+    }
+    .title{
+      text-align:center;
+      color:var(--muted);
+      font-size:13px;
+      margin:0 0 16px;
+    }
+    .meta{
+      list-style:none;
+      padding:0;
+      margin:0;
+      border-top:1px solid var(--line);
+      padding-top:14px;
+    }
+    .meta li{
+      display:flex;
+      gap:10px;
+      align-items:flex-start;
+      padding:8px 0;
+      color:var(--muted);
+      font-size:13px;
+    }
+    .meta i{
+      margin-top:2px;
+      width:16px;
+      color:#9ca3af;
+    }
+    .meta a{color:var(--link); text-decoration:none}
+    .meta a:hover{text-decoration:underline}
+
+    /* Main content */
+    .main{
+      padding:26px;
+    }
+    h1{
+      margin:0 0 10px;
+      font-size:34px;
+      letter-spacing:-0.03em;
+    }
+    .lead{
+      margin:0 0 22px;
+      color:var(--muted);
+      font-size:15px;
+    }
+    h2{
+      margin:26px 0 10px;
+      font-size:18px;
+      letter-spacing:-0.01em;
+    }
+    p{margin:10px 0}
+    .bullets{
+      margin:10px 0 0 18px;
+      color:var(--text);
+    }
+    .bullets li{margin:8px 0}
+    .section{
+      scroll-margin-top:90px; /* for anchor jumps */
+    }
+
+    /* Simple list styles */
+    .item{
+      padding:14px 0;
+      border-top:1px solid var(--line);
+    }
+    .item:first-of-type{border-top:none}
+    .item .where{
+      font-weight:600;
+    }
+    .item .when{
+      color:var(--muted);
+      font-size:13px;
+      margin-left:8px;
+    }
+
+    /* Mobile */
+    @media (max-width: 900px){
+      .grid{grid-template-columns:1fr}
+      .sidebar{position:relative; top:auto}
+      nav a{margin-left:12px}
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Top bar -->
+  <header class="topbar">
+    <div class="topbar-inner">
+      <a class="brand" href="#top">Won Ko</a>
+      <nav>
+        <a href="#publications">Publications</a>
+        <a href="#teaching">Teaching</a>
+        <a href="#cv">CV</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="top" class="wrap">
+    <div class="grid">
+      <!-- Sidebar -->
+      <aside class="card sidebar">
+        <!-- Put your image at: /assets/profile.jpg -->
+        <img class="avatar" src="assets/profile.jpg" alt="Profile photo">
+
+        <div class="name">Won Ko</div>
+        <div class="title">Senior Researcher • Robotics / SLAM / Planning</div>
+
+        <ul class="meta">
+          <li><i class="fa-solid fa-location-dot"></i><span>Seoul, South Korea</span></li>
+          <li><i class="fa-solid fa-building-columns"></i><span>Mobyus Future Tech R&amp;D Lab</span></li>
+          <li><i class="fa-solid fa-envelope"></i><span><a href="mailto:won@example.com">won@example.com</a></span></li>
+          <li><i class="fa-brands fa-google-scholar"></i><span><a href="#">Google Scholar</a></span></li>
+          <li><i class="fa-brands fa-orcid"></i><span><a href="#">ORCID</a></span></li>
+          <li><i class="fa-brands fa-github"></i><span><a href="https://github.com/wonko">GitHub</a></span></li>
+        </ul>
+      </aside>
+
+      <!-- Main content -->
+      <section class="card main">
+        <h1>Won Ko</h1>
+        <p class="lead">
+          I work on autonomous robotics: SLAM, guidance–navigation–control, and motion planning
+          for AMRs / autonomous forklifts in complex industrial environments.
+        </p>
+
+        <div class="section" id="about">
+          <h2>About</h2>
+          <p>
+            Write 2–4 lines about who you are, your lab/company, and your research focus.
+            Keep it short and readable.
+          </p>
+          <p>
+            My research interests lie at the intersection of perception and planning for autonomy,
+            with an emphasis on robust 3D SLAM, localization, and real-time trajectory generation.
+          </p>
+
+          <ul class="bullets">
+            <li>3D LiDAR(-Inertial) SLAM (LIO-SAM variants, plane-based SLAM)</li>
+            <li>Navigation stack integration (ROS 2, Nav2, custom planners)</li>
+            <li>Frenet-frame optimal trajectory planning & collision checking</li>
+          </ul>
+        </div>
+
+        <div class="section" id="publications">
+          <h2>Publications</h2>
+          <div class="item">
+            <span class="where">Paper Title Goes Here</span>
+            <span class="when">2025</span>
+            <div class="lead" style="margin:6px 0 0;">
+              Authors. Venue. <a href="#">PDF</a> · <a href="#">Code</a>
+            </div>
+          </div>
+          <div class="item">
+            <span class="where">Another Paper Title</span>
+            <span class="when">2024</span>
+            <div class="lead" style="margin:6px 0 0;">
+              Authors. Venue. <a href="#">PDF</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="section" id="teaching">
+          <h2>Teaching</h2>
+          <div class="item">
+            <span class="where">Course / Mentoring / Internal Training</span>
+            <span class="when">2024–2025</span>
+            <div class="lead" style="margin:6px 0 0;">
+              Short description of what you taught or led.
+            </div>
+          </div>
+        </div>
+
+        <div class="section" id="cv">
+          <h2>CV</h2>
+          <p>
+            Put your CV PDF in the repo (e.g., <code>assets/cv.pdf</code>) and link it here:
+            <a href="assets/cv.pdf">Download CV (PDF)</a>
+          </p>
+        </div>
+      </section>
+    </div>
+  </main>
+</body>
 </html>
+
