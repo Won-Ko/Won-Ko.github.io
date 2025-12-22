@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Teaching · Won Ko</title>
+  <title>Projects · Won Ko</title>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -18,8 +18,8 @@
       <a class="brand" href="/">Won Ko</a>
       <nav>
         <a href="/">About</a>
-        <a href="/projects/">Projects</a>
-        <a class="active" href="/teaching/">Teaching</a>
+        <a class="active" href="/projects/">Projects</a>
+        <a href="/teaching/">Teaching</a>
         <a href="/cv/">CV</a>
       </nav>
     </div>
@@ -27,7 +27,7 @@
 
   <main class="wrap">
     <div class="grid">
-      <!-- Same sidebar (copy from index.html) -->
+      <!-- Same sidebar (copy from your Teaching page) -->
       <aside class="card sidebar">
         <img class="avatar" src="/assets/profile.jpg" alt="Profile photo">
         <div class="name">Won Ko</div>
@@ -44,32 +44,46 @@
       </aside>
 
       <section class="card main">
-        <h1>Teaching</h1>
-        <p class="lead">Teaching experience and course support at UC Santa Cruz.</p>
+        <h1>Projects</h1>
+        <p class="lead">Selected projects across robotics, autonomy, and perception.</p>
 
         <div class="item">
           <div class="row">
-            <span class="where">Teaching Assistant · University of California, Santa Cruz</span>
-            <span class="when">Spring 2022 · Fall 2021</span>
+            <span class="where">Autonomous Forklifts (AFL)</span>
+            <span class="when">Nov 2024 · Oct 2025</span>
           </div>
-          <div class="sub">Mechatronics (ECE 118) · Santa Cruz, CA</div>
+          <div class="sub">Mobyus Future Tech R&amp;D Lab</div>
           <ul>
-            <li>Mixed undergraduate/graduate course on intelligent electro-mechanical systems integrating computer, electrical, mechanical, and software engineering.</li>
-            <li>Led instructional lab sections on event-driven programming, hierarchical state machines, sensor design, and system integration; graded assignments with the TA team.</li>
-            <li>Maintained and repaired lab hardware to ensure continuous operation; performed safety checks and managed spare parts to minimize downtime.</li>
+            <li>Developed Frenet-frame optimal-trajectory planning with B-spline smoothing for obstacle avoidance and precise docking; implemented a three-wheeled controller on AFL (SD-type motors).</li>
+            <li>Built a local SLAM mapping + localization pipeline integrating LiDAR/IMU with ESKF; tuned for stable pose and reliable warehouse navigation; added PLC-triggered behaviors for production workflows.</li>
           </ul>
         </div>
 
         <div class="item">
           <div class="row">
-            <span class="where">Teaching Assistant · University of California, Santa Cruz</span>
-            <span class="when">Spring 2021 · Winter 2022</span>
+            <span class="where">Continental Intelligent Intersection <span style="font-weight:500; opacity:.75;">— co-sponsored by Continental AG</span></span>
+            <span class="when">Sep 2018 · Jun 2019</span>
           </div>
-          <div class="sub">Computer Architecture (CSE 120) · Santa Cruz, CA</div>
+          <div class="sub">Capstone / Research Project</div>
           <ul>
-            <li>Undergraduate introduction to computer architecture: ISA, pipelining, caches, memory hierarchy, performance, and hardware/software interactions.</li>
-            <li>Led lab sections teaching RISC-V ISA and HDL-based design using Verilog/SystemVerilog; graded materials with the TA team.</li>
-            <li>Held weekly office hours supporting HDL debugging, simulation, and performance analysis for lab assignments.</li>
+            <li>Researched and programmed ML approaches (CNN, RNN, SVM, Hidden Markov Model).</li>
+            <li>Modified YOLOv3 to create customized object detection algorithms using C.</li>
+            <li>Created a module for training a dataset from sensor data (short/long-range radar, camera).</li>
+            <li>Applied trained models to detect critical scenarios using Python + OpenCV (e.g., pedestrians crossing, left-turn vehicles).</li>
+          </ul>
+        </div>
+
+        <div class="item">
+          <div class="row">
+            <span class="where">Autonomous Robot</span>
+            <span class="when">Apr 2019 · Jun 2019</span>
+          </div>
+          <div class="sub">Embedded Systems / Robotics Project</div>
+          <ul>
+            <li>Built an autonomous robot using Uno32, servos, DC motors, and sensors to navigate a standardized field, use obstacles strategically, and shoot ping-pong ball ammo.</li>
+            <li>Designed a spring-based shooting mechanism and developed a test harness for electrical components.</li>
+            <li>Constructed and programmed a hierarchical state machine (HSM) using Embedded C.</li>
+            <li>Calibrated sensors (tape sensor, beacon detector, track wire) and tested the robot for stability.</li>
           </ul>
         </div>
 
@@ -78,4 +92,5 @@
   </main>
 </body>
 </html>
+
 
