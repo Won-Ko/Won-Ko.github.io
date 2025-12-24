@@ -179,7 +179,7 @@ p{margin:10px 0}
 .item ul{ margin:10px 0 0 18px; }
 .item ul li{ margin:8px 0; }
 
-/* Project media layout (video left, text right) */
+/* Project media layout */
 .project-media{
   display: grid;
   grid-template-columns: minmax(280px, 420px) minmax(0, 1fr);
@@ -188,36 +188,30 @@ p{margin:10px 0}
   margin-top: 10px;
 }
 
-.project-media .media,
-.project-media .content{
-  min-width: 0;
-}
+.project-media > *{ min-width: 0; }
 
-/* cap the box, NOT the video element */
+/* fixed media box size (same for every project) */
 .project-media .media{
-  max-height: 260px;      /* controls visible size on page */
+  width: 100%;
+  height: 240px;          /* <-- change to 260/300 if you want bigger */
   overflow: hidden;
   border-radius: 12px;
+  border: 1px solid var(--line);
+  background: #000;
 }
 
-/* video can scale freely inside */
-.project-media video{
-  display: block;
+/* video fills the box but keeps full content */
+.project-media .media video{
   width: 100%;
   height: 100%;
-  object-fit: contain;    /* no cropping */
+  object-fit: contain;    /* no crop */
   background: #000;
-  border: 1px solid var(--line);
   border-radius: 12px;
+  border: 0;              /* border is on .media */
 }
 
-/* Mobile */
 @media (max-width: 900px){
-  .grid{grid-template-columns:1fr}
-  .sidebar{position:relative; top:auto}
-  nav a{margin-left:12px}
-
   .project-media{ grid-template-columns: 1fr; }
-  .project-media .media{ max-height: none; }
-  .project-media video{ height: auto; }
+  .project-media .media{ height: auto; }
+  .project-media .media video{ height: auto; }
 }
