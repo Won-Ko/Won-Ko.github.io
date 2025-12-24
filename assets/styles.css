@@ -7,8 +7,8 @@
   --card:#ffffff;         /* cards are white */
   --shadow: 0 6px 18px rgba(17,24,39,.10);
   --radius: 16px;
-  --maxw: 1100px;
-  --sidebar: 280px;
+  --maxw: 1350px;
+  --sidebar: 260px;
 }
 
 *{box-sizing:border-box}
@@ -175,7 +175,7 @@ p{margin:10px 0}
 /* Project media layout (video/image on left, text on right) */
 .project-media{
   display:grid;
-  grid-template-columns: 360px 1fr;
+  grid-template-columns: 320px minmax(0,1fr);}
   gap:18px;
   align-items:start;
   margin-top:10px;
@@ -200,4 +200,5 @@ p{margin:10px 0}
   .sidebar{position:relative; top:auto}
   nav a{margin-left:12px}
 }
+
 
