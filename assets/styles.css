@@ -201,7 +201,7 @@ p{margin:10px 0}
   height:auto;
   aspect-ratio: 16 / 9;
   max-height: 260px;      /* prevents “overfitting” */
-  object-fit: cover;      /* change to contain if you don’t want cropping */
+  object-fit: contain;      /* change to contain if you don’t want cropping */
   border-radius:12px;
   border:1px solid var(--line);
   background:#000;
@@ -218,3 +218,4 @@ p{margin:10px 0}
   .project-media iframe,
   .project-media img{ max-height: none; }
 }
+
