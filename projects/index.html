@@ -27,7 +27,6 @@
 
   <main class="wrap">
     <div class="grid">
-      <!-- Same sidebar (copy from your Teaching page) -->
       <aside class="card sidebar">
         <img class="avatar" src="/assets/profile.jpg" alt="Profile photo">
         <div class="name">Won Ko</div>
@@ -47,6 +46,7 @@
         <h1>Projects</h1>
         <p class="lead">Selected projects across robotics, autonomy, and perception.</p>
 
+        <!-- Project 1 -->
         <div class="item">
           <div class="row">
             <span class="where">Autonomous Forklifts (AFL)</span>
@@ -59,68 +59,68 @@
           </ul>
         </div>
 
+        <!-- Project 2 (with video) -->
         <div class="item">
           <div class="row">
             <span class="where">Continental Intelligent Intersection <span style="font-weight:500; opacity:.75;">— co-sponsored by Continental AG</span></span>
             <span class="when">Sep 2018 · Jun 2019</span>
           </div>
           <div class="sub">Capstone / Research Project</div>
-          
+
           <div class="project-media">
-           <div>
-            <video controls preload="metadata" playsinline>
-              <source src="/assets/videos/Continental.mp4" type="video/mp4">
-              Your browser does not support the video tag.
-            </video>
-            <div class="sub" style="margin-top:8px;">
-              Demo video: Autonomous Robot
+            <div>
+              <video controls preload="metadata" playsinline>
+                <source src="/assets/videos/Continental.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+              </video>
+              <div class="sub" style="margin-top:8px;">
+                Demo video: Continental Intelligent Intersection
+              </div>
+            </div>
+
+            <div class="content">
+              <ul>
+                <li>Researched and programmed ML approaches (CNN, RNN, SVM, Hidden Markov Model).</li>
+                <li>Modified YOLOv3 to create customized object detection algorithms using C.</li>
+                <li>Created a module for training a dataset from sensor data (short/long-range radar, camera).</li>
+                <li>Applied trained models to detect critical scenarios using Python + OpenCV (e.g., pedestrians crossing, left-turn vehicles).</li>
+              </ul>
             </div>
           </div>
-            
-          <div class="content">
-          <ul>
-            <li>Researched and programmed ML approaches (CNN, RNN, SVM, Hidden Markov Model).</li>
-            <li>Modified YOLOv3 to create customized object detection algorithms using C.</li>
-            <li>Created a module for training a dataset from sensor data (short/long-range radar, camera).</li>
-            <li>Applied trained models to detect critical scenarios using Python + OpenCV (e.g., pedestrians crossing, left-turn vehicles).</li>
-          </ul>
         </div>
-      <div class="item">
-        <div class="row">
-          <span class="where">Autonomous Robot</span>
-          <span class="when">Apr 2019 · Jun 2019</span>
-        </div>
-      <div class="sub">Embedded Systems / Robotics Project</div>
 
-      <div class="project-media">
-      <!-- Left: Video -->
-      <div>
-          <video controls preload="metadata" playsinline>
-            <source src="/assets/videos/Mechatronics.mp4" type="video/mp4">
-            Your browser does not support the video tag.
-          </video>
-          <div class="sub" style="margin-top:8px;">
-            Demo video: Autonomous Robot
+        <!-- Project 3 (with video) -->
+        <div class="item">
+          <div class="row">
+            <span class="where">Autonomous Robot</span>
+            <span class="when">Apr 2019 · Jun 2019</span>
           </div>
-      </div>
-      <!-- Right: Text -->
-        <div class="content">
-          <ul>
-            <li>Built an autonomous robot using Uno32, servos, DC motors, and sensors to navigate a standardized field, use obstacles strategically, and shoot ping-pong ball ammo.</li>
-            <li>Designed a spring-based shooting mechanism and developed a test harness for electrical components.</li>
-            <li>Constructed and programmed a hierarchical state machine (HSM) using Embedded C.</li>
-            <li>Calibrated sensors (tape sensor, beacon detector, track wire) and tested the robot for stability.</li>
-          </ul>
+          <div class="sub">Embedded Systems / Robotics Project</div>
+
+          <div class="project-media">
+            <div>
+              <video controls preload="metadata" playsinline>
+                <source src="/assets/videos/Mechatronics.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+              </video>
+              <div class="sub" style="margin-top:8px;">
+                Demo video: Autonomous Robot
+              </div>
+            </div>
+
+            <div class="content">
+              <ul>
+                <li>Built an autonomous robot using Uno32, servos, DC motors, and sensors to navigate a standardized field, use obstacles strategically, and shoot ping-pong ball ammo.</li>
+                <li>Designed a spring-based shooting mechanism and developed a test harness for electrical components.</li>
+                <li>Constructed and programmed a hierarchical state machine (HSM) using Embedded C.</li>
+                <li>Calibrated sensors (tape sensor, beacon detector, track wire) and tested the robot for stability.</li>
+              </ul>
+            </div>
+          </div>
         </div>
-      </div>
-    </div>
-        
+
       </section>
     </div>
   </main>
 </body>
 </html>
-
-
-
-
