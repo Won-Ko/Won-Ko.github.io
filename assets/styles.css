@@ -53,7 +53,11 @@ nav a{
   margin-left:18px;
 }
 nav a:hover{color:var(--text)}
-nav a.active{color:var(--text); border-bottom:2px solid var(--link); padding-bottom:6px}
+nav a.active{
+  color:var(--text);
+  border-bottom:2px solid var(--link);
+  padding-bottom:6px;
+}
 
 /* Layout */
 .wrap{
@@ -128,7 +132,10 @@ nav a.active{color:var(--text); border-bottom:2px solid var(--link); padding-bot
 .meta a:hover{text-decoration:underline}
 
 /* Main content */
-.main{ padding:26px; }
+.main{
+  padding:26px;
+  overflow:hidden; /* safety to prevent media overflow */
+}
 h1{
   margin:0 0 10px;
   font-size:34px;
@@ -172,26 +179,32 @@ p{margin:10px 0}
 .item ul{ margin:10px 0 0 18px; }
 .item ul li{ margin:8px 0; }
 
-/* Project media layout (video/image on left, text on right) */
+/* Project media layout (video left, text right) */
 .project-media{
-  display:grid;
-  grid-template-columns: 320px minmax(0,1fr);}
-  gap:18px;
-  align-items:start;
-  margin-top:10px;
+  display: grid;
+  grid-template-columns: minmax(280px, 420px) minmax(0, 1fr);
+  gap: 18px;
+  align-items: start;
+  margin-top: 10px;
+}
+
+.project-media .media,
+.project-media .content{
+  min-width: 0;
 }
 
 .project-media video,
 .project-media iframe,
 .project-media img{
+  display:block;
   width:100%;
+  height:auto;
+  aspect-ratio: 16 / 9;
+  max-height: 260px;      /* prevents “overfitting” */
+  object-fit: cover;      /* change to contain if you don’t want cropping */
   border-radius:12px;
   border:1px solid var(--line);
   background:#000;
-}
-
-.project-media .content{
-  min-width:0;
 }
 
 /* Mobile */
@@ -199,6 +212,9 @@ p{margin:10px 0}
   .grid{grid-template-columns:1fr}
   .sidebar{position:relative; top:auto}
   nav a{margin-left:12px}
+
+  .project-media{ grid-template-columns: 1fr; }
+  .project-media video,
+  .project-media iframe,
+  .project-media img{ max-height: none; }
 }
-
-
