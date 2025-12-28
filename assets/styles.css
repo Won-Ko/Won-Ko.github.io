@@ -193,7 +193,7 @@ p{margin:10px 0}
 /* fixed media box size (same for every project) */
 .project-media .media{
   width: 100%;
-  height: 240px;          /* <-- change to 260/300 if you want bigger */
+  height: 240px;
   overflow: hidden;
   border-radius: 12px;
   border: 1px solid var(--line);
@@ -204,10 +204,10 @@ p{margin:10px 0}
 .project-media .media video{
   width: 100%;
   height: 100%;
-  object-fit: contain;    /* no crop */
+  object-fit: contain;
   background: #000;
   border-radius: 12px;
-  border: 0;              /* border is on .media */
+  border: 0;
 }
 
 /* ------------------------------
@@ -216,10 +216,11 @@ p{margin:10px 0}
    ------------------------------ */
 .project-media .media.stack{
   height: auto;          /* override fixed 240px */
-  overflow: visible;     /* don't clip 2nd video / controls */
+  overflow: visible;     /* don't clip 2nd/3rd video controls */
   background: transparent;
   padding: 0;
   border: 0;             /* remove the outer single box */
+  border-radius: 0;
 }
 
 .project-media .media.stack .media-box{
