@@ -210,6 +210,40 @@ p{margin:10px 0}
   border: 0;              /* border is on .media */
 }
 
+/* ------------------------------
+   STACKED VIDEO MODE (AFL ONLY)
+   Use: <div class="media stack">
+   ------------------------------ */
+.project-media .media.stack{
+  height: auto;          /* override fixed 240px */
+  overflow: visible;     /* don't clip 2nd video / controls */
+  background: transparent;
+  padding: 0;
+  border: 0;             /* remove the outer single box */
+}
+
+.project-media .media.stack .media-box{
+  width: 100%;
+  overflow: hidden;
+  border-radius: 12px;
+  border: 1px solid var(--line);
+  background: #000;
+}
+
+.project-media .media.stack .media-box video{
+  width: 100%;
+  height: auto;
+  aspect-ratio: 16 / 9;
+  object-fit: contain;
+  background: #000;
+  border-radius: 12px;
+}
+
+/* spacing between stacked videos */
+.project-media .media.stack .media-box + .media-box{
+  margin-top: 14px;
+}
+
 @media (max-width: 900px){
   .project-media{ grid-template-columns: 1fr; }
   .project-media .media{ height: auto; }
