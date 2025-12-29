@@ -9,7 +9,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-  <link rel="stylesheet" href="/assets/styles.css?v=11">
+  <link rel="stylesheet" href="/assets/styles.css?v=12">
 </head>
 
 <body>
@@ -54,17 +54,19 @@
           </div>
           <div class="sub">Mobyus Future Tech R&amp;D Lab</div>
 
-          <!-- Row 1: Main AFL demo + overall autonomy -->
+          <!-- Row 1 -->
           <div class="project-media afl-row">
-            <div class="media">
-              <video controls preload="metadata" playsinline>
-                <source src="/assets/videos/AFL_DEMO1.mp4" type="video/mp4">
-                Your browser does not support the video tag.
-              </video>
+            <div>
+              <div class="media">
+                <video controls preload="metadata" playsinline>
+                  <source src="/assets/videos/AFL_DEMO1.mp4" type="video/mp4">
+                  Your browser does not support the video tag.
+                </video>
+              </div>
+              <div class="sub" style="margin-top:8px;">Demo video: Autonomous Forklifts (AFL)</div>
             </div>
 
             <div class="content">
-              <div class="sub" style="margin-top:0;">Demo video: Autonomous Forklifts (AFL)</div>
               <ul>
                 <li>Developed Frenet-frame optimal-trajectory planning with B-spline smoothing for obstacle avoidance and precise docking; implemented a three-wheeled controller on AFL (SD-type motors).</li>
                 <li>Built a local SLAM mapping + localization pipeline integrating LiDAR/IMU with ESKF; tuned for stable pose and reliable warehouse navigation; added PLC-triggered behaviors for production workflows.</li>
@@ -72,34 +74,40 @@
             </div>
           </div>
 
-          <!-- Row 2: Obstacle avoidance -->
+          <!-- Row 2 -->
           <div class="project-media afl-row">
-            <div class="media">
-              <video controls preload="metadata" playsinline>
-                <source src="/assets/videos/AFL_avoidance.mp4" type="video/mp4">
-                Your browser does not support the video tag.
-              </video>
+            <div>
+              <div class="media">
+                <video controls preload="metadata" playsinline>
+                  <source src="/assets/videos/AFL_avoidance.mp4" type="video/mp4">
+                  Your browser does not support the video tag.
+                </video>
+              </div>
+              <div class="sub" style="margin-top:8px;">Demo video: Obstacle avoidance (RealSense D435f + 2D SICK LiDAR)</div>
             </div>
 
             <div class="content">
-              <div class="sub" style="margin-top:0;">Demo video: Obstacle avoidance (RealSense D435f + 2D SICK LiDAR)</div>
               <ul>
                 <li>Designed and developed obstacle detection using sensor fusion of a RealSense D435f depth vision sensor and a 2D SICK LiDAR to robustly detect obstacles for safe warehouse navigation.</li>
               </ul>
             </div>
           </div>
 
-          <!-- Row 3: Pallet perception + truck space detection -->
+          <!-- Row 3 -->
           <div class="project-media afl-row">
-            <div class="media">
-              <video controls preload="metadata" playsinline>
-                <source src="/assets/videos/AFL_pallet_perception.mp4" type="video/mp4">
-                Your browser does not support the video tag.
-              </video>
+            <div>
+              <div class="media">
+                <video controls preload="metadata" playsinline>
+                  <source src="/assets/videos/AFL_pallet_perception.mp4" type="video/mp4">
+                  Your browser does not support the video tag.
+                </video>
+              </div>
+              <div class="sub" style="margin-top:8px;">
+                Demo video: Pallet stack perception (SICK Visionary-T Mini) + truck space detection (ZED2i)
+              </div>
             </div>
 
             <div class="content">
-              <div class="sub" style="margin-top:0;">Demo video: Pallet stack perception (SICK Visionary-T Mini) + truck space detection (ZED2i)</div>
               <ul>
                 <li>Developed pallet-stacking perception using a SICK Visionary-T Mini: estimated pallet size and fork-pocket (hole) centers with a Transformer-based model, leveraging CAD-based geometry to localize hole centers for precise insertion/alignment.</li>
                 <li>Built truck/trailer free-space perception using ZED2i stereo and object detection models (YOLOv12, RF-DETR) to estimate available loading space and placement feasibility.</li>
