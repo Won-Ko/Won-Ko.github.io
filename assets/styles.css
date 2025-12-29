@@ -209,21 +209,19 @@ p{margin:10px 0}
   border: 0;              /* border is on .media */
 }
 
+/* caption under the video (outside the black box) */
+.demo-caption{
+  margin-top:8px;
+  color:var(--muted);
+  font-size:14px;
+}
+
 /* spacing between multiple project-media blocks inside one project */
 .item .project-media + .project-media{
   margin-top: 14px;
 }
 
-/* ==============================
-   AFL rows: one video + matching text per row
-   Keep AFL video size SAME as other projects.
-   ============================== */
-.project-media.afl-row{
-  grid-template-columns: minmax(280px, 420px) minmax(0, 1fr); /* same as default */
-  align-items: start;
-}
-
-/* Make the bullet list start at the top in AFL rows */
+/* AFL rows: keep same sizing; just make lists align nicely */
 .project-media.afl-row .content ul{
   margin-top: 0;
 }
