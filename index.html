@@ -9,6 +9,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   <link rel="stylesheet" href="assets/styles.css">
 </head>
 
@@ -62,21 +63,18 @@
           but deployment never is.
         </p>
 
-        <p class="about-story">
-          My working style was shaped by a quote from my mechatronics professor:
-          <b>“Fail early and fail often.”</b> During an eight-week autonomous robot build, my team rarely slept—we
-          tested aggressively, broke things quickly, and learned faster. That experience became my mindset:
-          surface risks early, instrument and measure what matters, stress-test edge cases, and iterate until
-          performance is stable and repeatable.
-        </p>
-
         <hr class="section-divider">
 
         <h2>Current focus</h2>
         <ul>
-          <li><b>3D SLAM R&amp;D:</b> LiDAR–inertial and visual–inertial/VSLAM for robust localization and mapping.</li>
-          <li><b>Multi-sensor perception:</b> camera + LiDAR fusion for obstacle detection and safe navigation.</li>
+          <li><b>3D SLAM:</b> LiDAR–inertial odometry (LIO) and visual–inertial odometry (VIO/VSLAM) for robust localization and mapping.</li>
+
+          <li><b>Navigation:</b> integrating perception + estimation into planning/control for safe, repeatable motion in dynamic environments.</li>
+
+          <li><b>Perception:</b> camera + LiDAR fusion for obstacle detection and scene understanding to support navigation and measurement tasks.</li>
+
           <li><b>Sensor calibration algorithms:</b> LiDAR↔IMU extrinsic calibration, Camera↔IMU extrinsic calibration, and joint calibration across LiDAR, IMU, and camera.</li>
+
           <li><b>System validation:</b> prototyping and evaluation in ROS 2 with a focus on measurable accuracy and real-world reliability.</li>
         </ul>
 
