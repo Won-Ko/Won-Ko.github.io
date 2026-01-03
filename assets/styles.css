@@ -155,37 +155,16 @@ p{margin:10px 0}
 
 /* About story */
 .about-story{
-  margin: 0 0 16px;
+  margin: 0 0 10px;
   color:#374151;
   font-size:15px;
   line-height:1.65;
 }
+.about-story:last-of-type{
+  margin-bottom: 16px;
+}
 .about-story b{
   color:var(--text);
-}
-
-/* Highlights row */
-.highlights{
-  display:grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap:10px;
-  margin:10px 0 18px;
-}
-.chip{
-  border:1px solid var(--line);
-  border-radius:14px;
-  padding:10px 12px;
-  background: rgba(255,255,255,0.75);
-}
-.chip b{
-  display:block;
-  font-size:0.95rem;
-}
-.chip span{
-  display:block;
-  color:var(--muted);
-  font-size:0.92rem;
-  margin-top:3px;
 }
 
 /* Roadmap pill */
@@ -281,6 +260,4 @@ p{margin:10px 0}
   .project-media{ grid-template-columns: 1fr; }
   .project-media .media{ height: auto; }
   .project-media .media video{ height: auto; }
-
-  .highlights{ grid-template-columns: 1fr; }
 }
