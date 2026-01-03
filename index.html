@@ -50,29 +50,63 @@
 
       <section class="card main">
         <h1>About</h1>
+
         <p class="lead">
-          I work on autonomous robotics: SLAM, guidance–navigation–control, and motion planning
-          for AMRs / autonomous forklifts in complex industrial environments.
+          I’m a Senior Researcher building autonomy for mobile robots—perception &amp; sensor fusion,
+          state estimation (SLAM), and motion planning/control—with an emphasis on reliable behavior
+          on real hardware.
         </p>
+
+        <p class="about-story">
+          I chose robotics because it lives at the intersection of algorithms and reality: the math can be clean,
+          but deployment never is. My working style was shaped by a quote from my mechatronics professor:
+          <b>“Fail early and fail often.”</b> During an eight-week autonomous robot build, my team rarely slept—we
+          tested aggressively, broke things quickly, and learned faster. That experience became my mindset:
+          surface risks early, instrument and measure what matters, stress-test edge cases, and iterate until
+          performance is stable and repeatable.
+        </p>
+
+        <div class="highlights">
+          <div class="chip">
+            <b>Calibration</b>
+            <span>LiDAR–IMU &amp; IMU–camera extrinsics (least squares)</span>
+          </div>
+          <div class="chip">
+            <b>3D SLAM</b>
+            <span>≤ 30 mm position error (testbeds)</span>
+          </div>
+          <div class="chip">
+            <b>Precision Perception</b>
+            <span>Pallet hole @ 4 m, ~0.5° error</span>
+          </div>
+        </div>
 
         <h2>Research interests</h2>
         <ul>
-          <li>3D SLAM & localization (LiDAR-Inertial, visual-inertial)</li>
-          <li>Motion planning (global + local), Frenet optimal trajectories</li>
-          <li>Sensor fusion and robust navigation in dynamic warehouses</li>
+          <li><b>Autonomous systems:</b> building reliable autonomy that connects perception, estimation, and decision-making with measurable safety and robustness in real deployments.</li>
+
+          <li><b>Guidance, Navigation &amp; Control (GNC):</b> motion control and navigation under uncertainty, including trajectory tracking, system modeling, and robust control for real platforms.</li>
+
+          <li><b>Multi-modal sensor fusion for 3D measurement:</b> camera/depth/LiDAR/radar/IMU fusion with calibration, time synchronization, and uncertainty-aware estimation.</li>
+
+          <li><b>3D perception for precision tasks:</b> detection, segmentation, keypoints, dense depth, and reconstruction with quantitative evaluation (accuracy, latency, robustness).</li>
+
+          <li><b>Perception-aware planning &amp; safety:</b> decision-making under uncertainty (belief-aware / stochastic ideas) paired with verifiable safety mechanisms (e.g., safety shields / CBF-style constraints).</li>
+
+          <li><b>Spatial AI roadmap (future direction):</b> <span class="roadmap">VSLAM → 3D space reconstruction → Spatial AI → VLM/VLA</span>
+            to ground semantic understanding in 3D and enable reliable vision–language–action for <b>inspection</b> and <b>precision measurement</b> workflows.</li>
+
+          <li><b>Sim-to-real robustness:</b> domain randomization, data-efficient adaptation, and active learning to reduce retuning in changing environments.</li>
         </ul>
 
         <h2>Current focus</h2>
         <p>
-          Building production-grade ROS 2 autonomy stacks with scalable mapping/localization,
-          behavior planning, and safety-oriented obstacle avoidance.
+          Developing and validating production-grade ROS 2 autonomy stacks with scalable mapping/localization,
+          behavior planning, and safety-oriented obstacle avoidance—integrated with real robot constraints and
+          cross-functional workflows.
         </p>
       </section>
     </div>
   </main>
 </body>
 </html>
-
-
-
-
