@@ -143,9 +143,11 @@ h1{
 }
 .lead{
   margin:0 0 14px;
-  color:var(--muted);
+  color:var(--text);
   font-size:15px;
 }
+.lead b{ font-weight:800; } /* slightly stronger for "Senior Researcher" */
+
 h2{
   margin:18px 0 10px;
   font-size:18px;
@@ -160,11 +162,15 @@ p{margin:10px 0}
   font-size:15px;
   line-height:1.65;
 }
-.about-story:last-of-type{
-  margin-bottom: 16px;
-}
 .about-story b{
   color:var(--text);
+}
+
+/* Section divider */
+.section-divider{
+  border:0;
+  border-top:1px solid var(--line);
+  margin:18px 0;
 }
 
 /* Roadmap pill */
