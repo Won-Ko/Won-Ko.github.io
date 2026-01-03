@@ -52,12 +52,11 @@
         <h1>About</h1>
 
         <p class="lead">
-          I’m a Senior Researcher building autonomy for mobile robots—perception &amp; sensor fusion,
+          I’m a <b>Senior Researcher</b> building autonomy for mobile robots—perception &amp; sensor fusion,
           state estimation (SLAM), and motion planning/control—with an emphasis on reliable behavior
           on real hardware.
         </p>
 
-        <!-- Split into two paragraphs so "My working..." starts on a new line -->
         <p class="about-story">
           I chose robotics because it lives at the intersection of algorithms and reality: the math can be clean,
           but deployment never is.
@@ -70,6 +69,21 @@
           surface risks early, instrument and measure what matters, stress-test edge cases, and iterate until
           performance is stable and repeatable.
         </p>
+
+        <!-- Divider between About and Current focus -->
+        <hr class="section-divider">
+
+        <h2>Current focus</h2>
+        <p>
+          Researching and developing 3D SLAM algorithms (LiDAR–inertial and visual–inertial/VSLAM),
+          multi-sensor perception pipelines (camera + LiDAR fusion) for robust obstacle detection and safe navigation,
+          and new sensor calibration methods—including LiDAR↔IMU extrinsic calibration, Camera↔IMU extrinsic calibration,
+          and joint calibration across LiDAR, IMU, and camera. I currently prototype and validate these systems in ROS 2,
+          with a focus on measurable accuracy and real-world reliability.
+        </p>
+
+        <!-- Divider between Current focus and Research interests -->
+        <hr class="section-divider">
 
         <h2>Research interests</h2>
         <ul>
@@ -88,13 +102,6 @@
 
           <li><b>Sim-to-real robustness:</b> domain randomization, data-efficient adaptation, and active learning to reduce retuning in changing environments.</li>
         </ul>
-
-        <h2>Current focus</h2>
-        <p>
-          Developing and validating production-grade ROS 2 autonomy stacks with scalable mapping/localization,
-          behavior planning, and safety-oriented obstacle avoidance—integrated with real robot constraints and
-          cross-functional workflows.
-        </p>
       </section>
     </div>
   </main>
