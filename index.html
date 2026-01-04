@@ -9,7 +9,6 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   <link rel="stylesheet" href="assets/styles.css">
 </head>
 
@@ -53,9 +52,21 @@
         <h1>About</h1>
 
         <p class="lead">
-          I’m a <b>Senior Researcher</b> building autonomy for mobile robots—perception &amp; sensor fusion,
-          state estimation (SLAM), and motion planning/control—with an emphasis on reliable behavior
-          on real hardware.
+          I’m a <b>Senior Researcher</b> building autonomy and perception systems for mobile robots—multi-sensor fusion,
+          state estimation (SLAM), and motion planning/control—with an emphasis on reliable behavior on real hardware.
+        </p>
+
+        <!-- Quick action buttons (HR-friendly) -->
+        <div class="quick-links" aria-label="Quick links">
+          <a class="btn" href="/cv/"><i class="fa-solid fa-file-lines"></i><span>CV</span></a>
+          <a class="btn" href="/projects/"><i class="fa-solid fa-diagram-project"></i><span>Projects</span></a>
+          <a class="btn" href="https://github.com/Won-Ko" target="_blank" rel="noopener"><i class="fa-brands fa-github"></i><span>GitHub</span></a>
+          <a class="btn" href="mailto:kowon861@gmail.com"><i class="fa-solid fa-envelope"></i><span>Email</span></a>
+        </div>
+
+        <!-- Results line -->
+        <p class="results">
+          <b>Recent results:</b> ≤30 mm 3D SLAM position error (testbeds); pallet-hole detection at 4 m with ~0.5° angular error.
         </p>
 
         <p class="about-story">
@@ -68,13 +79,9 @@
         <h2>Current focus</h2>
         <ul>
           <li><b>3D SLAM:</b> LiDAR–inertial odometry (LIO) and visual–inertial odometry (VIO/VSLAM) for robust localization and mapping.</li>
-
-          <li><b>Navigation:</b> integrating perception + estimation into planning/control for safe, repeatable motion in dynamic environments.</li>
-
-          <li><b>Perception:</b> camera + LiDAR fusion for obstacle detection and scene understanding to support navigation and measurement tasks.</li>
-
           <li><b>Sensor calibration algorithms:</b> LiDAR↔IMU extrinsic calibration, Camera↔IMU extrinsic calibration, and joint calibration across LiDAR, IMU, and camera.</li>
-
+          <li><b>Navigation:</b> integrating perception + estimation into planning/control for safe, repeatable motion in dynamic environments.</li>
+          <li><b>Perception:</b> camera + LiDAR fusion for obstacle detection and scene understanding to support navigation and measurement tasks.</li>
           <li><b>System validation:</b> prototyping and evaluation in ROS 2 with a focus on measurable accuracy and real-world reliability.</li>
         </ul>
 
