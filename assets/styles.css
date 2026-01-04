@@ -245,7 +245,8 @@ p{margin:10px 0}
 .demo-caption{
   margin-top:8px;
   color:var(--muted);
-  font-size:14px;
+  font-size:13px;
+  line-height:1.35;
 }
 
 /* spacing between multiple project-media blocks inside one project */
@@ -267,3 +268,4 @@ p{margin:10px 0}
   .project-media .media{ height: auto; }
   .project-media .media video{ height: auto; }
 }
+
