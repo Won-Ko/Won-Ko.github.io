@@ -52,6 +52,20 @@
         <h1>Projects</h1>
         <p class="lead">Selected projects across robotics, autonomy, and perception.</p>
 
+        <!-- Highlights (HR-friendly, Boeing-aligned) -->
+        <div class="item">
+          <div class="row">
+            <span class="where">Highlights</span>
+          </div>
+          <div class="content">
+            <ul>
+              <li><b>Multi-sensor calibration:</b> LiDAR↔IMU and camera↔IMU extrinsic calibration (least-squares); joint calibration across LiDAR, IMU, and camera.</li>
+              <li><b>Multi-modal perception &amp; fusion:</b> depth/camera + LiDAR pipelines for obstacle detection, scene understanding, and precision alignment tasks.</li>
+              <li><b>Quantitative validation:</b> accuracy/robustness testing in lab &amp; field setups; recent results include ≤30 mm SLAM position error (testbeds) and pallet-hole detection at 4 m with ~0.5° angular error.</li>
+            </ul>
+          </div>
+        </div>
+
         <!-- Project 1 -->
         <div class="item">
           <div class="row">
@@ -59,6 +73,13 @@
             <span class="when">Nov 2024 · Oct 2025</span>
           </div>
           <div class="sub">Mobyus Future Tech R&amp;D Lab</div>
+
+          <!-- Key lines (HR + hiring manager) -->
+          <div class="sub" style="margin-top:8px;">
+            <b>Key results:</b> ≤30 mm SLAM position error (testbeds); pallet-hole detection @ 4 m with ~0.5° angular error.
+            <span style="display:block; margin-top:6px;"><b>My role:</b> algorithm design/implementation, integration on real platforms, and evaluation/validation.</span>
+            <span style="display:block; margin-top:6px;"><b>Tech:</b> ROS 2, LiDAR, IMU, RGB-D (RealSense), stereo (ZED2i), SICK LiDAR, SICK Visionary-T Mini, PCL/OpenCV, PyTorch.</span>
+          </div>
 
           <!-- Row 1 -->
           <div class="project-media afl-row">
@@ -69,13 +90,13 @@
                   Your browser does not support the video tag.
                 </video>
               </div>
-              <div class="demo-caption">Demo video: Autonomous Forklifts (AFL)</div>
+              <div class="demo-caption">Demo: autonomous forklift navigation + docking (planning/control + SLAM)</div>
             </div>
 
             <div class="content">
               <ul>
-                <li>Developed Frenet-frame optimal-trajectory planning with B-spline smoothing for obstacle avoidance and precise docking; implemented a three-wheeled controller on AFL (SD-type motors).</li>
-                <li>Built a local SLAM mapping + localization pipeline integrating LiDAR/IMU with ESKF; tuned for stable pose and reliable warehouse navigation; added PLC-triggered behaviors for production workflows.</li>
+                <li><b>Navigation &amp; control:</b> developed Frenet-frame optimal-trajectory planning with B-spline smoothing for obstacle avoidance and precise docking; implemented a three-wheeled controller on an AFL platform (SD-type motors).</li>
+                <li><b>State estimation (SLAM):</b> built a local mapping + localization pipeline integrating LiDAR/IMU with ESKF; tuned for stable pose and reliable operation in real deployments; integrated PLC-triggered behaviors for production workflows.</li>
               </ul>
             </div>
           </div>
@@ -89,12 +110,13 @@
                   Your browser does not support the video tag.
                 </video>
               </div>
-              <div class="demo-caption">Demo video: Obstacle avoidance (RealSense D435f + 2D SICK LiDAR)</div>
+              <div class="demo-caption">Demo: depth camera + LiDAR fusion for obstacle detection and safe navigation</div>
             </div>
 
             <div class="content">
               <ul>
-                <li>Designed and developed obstacle detection using sensor fusion of a RealSense D435f depth vision sensor and a 2D SICK LiDAR to robustly detect obstacles for safe warehouse navigation.</li>
+                <li><b>Perception &amp; fusion:</b> developed obstacle detection using sensor fusion of RealSense D435f depth data and a 2D SICK LiDAR to improve robustness under occlusion and dynamic scenes.</li>
+                <li><b>Validation:</b> stress-tested detection behavior and navigation safety in real aisles with moving objects and varied lighting/reflective surfaces.</li>
               </ul>
             </div>
           </div>
@@ -108,15 +130,13 @@
                   Your browser does not support the video tag.
                 </video>
               </div>
-              <div class="demo-caption">
-                Demo video: Pallet stack perception (SICK Visionary-T Mini) + truck space detection (ZED2i)
-              </div>
+              <div class="demo-caption">Demo: pallet-hole center estimation (Visionary-T Mini) + truck free-space estimation (ZED2i)</div>
             </div>
 
             <div class="content">
               <ul>
-                <li>Developed pallet-stacking perception using a SICK Visionary-T Mini: estimated pallet size and fork-pocket (hole) centers with a Transformer-based model, leveraging CAD-based geometry to localize hole centers for precise insertion/alignment.</li>
-                <li>Built truck/trailer free-space perception using ZED2i stereo and object detection models (YOLOv12, RF-DETR) to estimate available loading space and placement feasibility.</li>
+                <li><b>Precision perception:</b> developed pallet-stacking perception using SICK Visionary-T Mini; estimated pallet size and fork-pocket (hole) centers with a transformer-based model + CAD prior for precise insertion/alignment.</li>
+                <li><b>Scene understanding:</b> built truck/trailer free-space perception using ZED2i stereo and object detectors (YOLOv12, RF-DETR) to estimate available loading space and placement feasibility.</li>
               </ul>
             </div>
           </div>
@@ -136,15 +156,14 @@
                 <source src="/assets/videos/Continental.mp4" type="video/mp4">
                 Your browser does not support the video tag.
               </video>
-              <div class="sub" style="margin-top:8px;">Demo video: Continental Intelligent Intersection</div>
+              <div class="demo-caption">Demo: multi-sensor traffic scene understanding (radar + camera) and risk scenario detection</div>
             </div>
 
             <div class="content">
               <ul>
-                <li>Researched and programmed ML approaches (CNN, RNN, SVM, Hidden Markov Model).</li>
-                <li>Modified YOLOv3 to create customized object detection algorithms using C.</li>
-                <li>Created a module for training a dataset from sensor data (short/long-range radar, camera).</li>
-                <li>Applied trained models to detect critical scenarios using Python + OpenCV (e.g., pedestrians crossing, left-turn vehicles).</li>
+                <li><b>ML/CV modeling:</b> evaluated CNN/RNN/SVM/HMM approaches for traffic-scene understanding and critical scenario prediction.</li>
+                <li><b>Object detection:</b> customized YOLOv3 for project-specific detection targets; built training and inference utilities using Python + OpenCV.</li>
+                <li><b>Sensor data pipeline:</b> implemented data preparation and training workflow using radar (short/long range) and camera data for labeled scenario detection.</li>
               </ul>
             </div>
           </div>
@@ -164,7 +183,7 @@
                 <source src="/assets/videos/Mechatronics.mp4" type="video/mp4">
                 Your browser does not support the video tag.
               </video>
-              <div class="sub" style="margin-top:8px;">Demo video: Autonomous Robot</div>
+              <div class="demo-caption">Demo: embedded autonomy (state machine, sensing, actuation) with rapid iteration under deadlines</div>
             </div>
 
             <div class="content">
@@ -183,6 +202,3 @@
   </main>
 </body>
 </html>
-
-
-
