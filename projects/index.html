@@ -3,13 +3,14 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="description" content="Selected localization, SLAM, state-estimation, sensor-fusion, and autonomous robotics projects by Won Ko." />
   <title>Projects · Won Ko</title>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-  <link rel="stylesheet" href="/assets/styles.css?v=13">
+  <link rel="stylesheet" href="/assets/styles.css?v=22">
 </head>
 
 <body>
@@ -30,173 +31,193 @@
       <aside class="card sidebar">
         <img class="avatar" src="/assets/profile.jpg" alt="Profile photo">
         <div class="name">Won Ko</div>
-        <div class="title">AI/ML • Robotics and Control • Mechatronics • Sensor Fusion • Computer Vision • SLAM</div>
-
+        <div class="title">Localization &amp; SLAM • Sensor Fusion • State Estimation • Autonomous Robotics</div>
         <ul class="meta">
           <li><i class="fa-solid fa-location-dot"></i><span>Seoul, South Korea</span></li>
-          <li><i class="fa-solid fa-building-columns"></i>
-            <span><span>Senior Researcher</span><br><span>Mobyus Future Tech R&amp;D Lab</span></span>
-          </li>
-          <li><i class="fa-solid fa-building-columns"></i>
-            <span><span>M.S in Computer Engineering</span><br><span>UC Santa Cruz</span></span>
-          </li>
-          <li><i class="fa-solid fa-building-columns"></i>
-            <span><span>B.S in Computer Engineering</span><br><span>UC Santa Cruz</span></span>
-          </li>
+          <li><i class="fa-solid fa-building-columns"></i><span><span>Senior Researcher</span><br><span>Mobyus Future Tech R&amp;D Lab</span></span></li>
+          <li><i class="fa-solid fa-graduation-cap"></i><span><span>M.S. / B.S. Computer Engineering</span><br><span>UC Santa Cruz</span></span></li>
           <li><i class="fa-solid fa-envelope"></i><span><a href="mailto:kowon861@gmail.com">kowon861@gmail.com</a></span></li>
           <li><i class="fa-brands fa-github"></i><span><a href="https://github.com/Won-Ko">GitHub</a></span></li>
         </ul>
       </aside>
 
       <section class="card main">
-        <h1>Projects</h1>
-        <p class="lead">Selected projects across robotics, autonomy, and perception.</p>
+        <div class="hero-kicker">Selected Technical Work</div>
+        <h1>Localization &amp; Robotics Projects</h1>
+        <p class="lead">Current R&amp;D in localization, state estimation, sensor integration, and real-robot autonomy.</p>
 
-        <!-- Highlights (HR-friendly, Boeing-aligned) -->
-        <div class="item">
+        <div class="tag-row project-tags">
+          <span class="tag">LIO-SAM / SC-LIO-SAM</span>
+          <span class="tag">GTSAM / iSAM2</span>
+          <span class="tag">ESKF / IMU Preintegration</span>
+          <span class="tag">Intensity Scan Context</span>
+          <span class="tag">RGB-D / Visual-Aided LIO</span>
+          <span class="tag">ROS 2</span>
+        </div>
+
+        <div class="item featured-project" id="intensity-localization">
           <div class="row">
-            <span class="where">Highlights</span>
+            <span class="where">Robust Prior-Map Localization with Calibrated LiDAR Intensity</span>
+            <span class="when">Ongoing R&amp;D</span>
           </div>
-          <div class="content">
-            <ul>
-              <li><b>Multi-sensor calibration:</b> LiDAR↔IMU and camera↔IMU extrinsic calibration (least-squares); joint calibration across LiDAR, IMU, and camera.</li>
-              <li><b>Multi-modal perception &amp; fusion:</b> depth/camera + LiDAR pipelines for obstacle detection, scene understanding, and precision alignment tasks.</li>
-              <li><b>Quantitative validation:</b> accuracy/robustness testing in lab &amp; field setups; recent results include ≤30 mm SLAM position error (testbeds) and pallet-hole detection at 4 m with ~0.5° angular error.</li>
-            </ul>
+          <div class="sub">Global localization / relocalization for repetitive warehouse environments</div>
+
+          <div class="project-media wide-media">
+            <div class="media-col">
+              <div class="media">
+                <video controls preload="metadata" playsinline poster="/assets/intensity_localization_poster.jpg">
+                  <source src="/assets/videos/intensity_localization.mp4" type="video/mp4">
+                  Your browser does not support the video tag.
+                </video>
+              </div>
+              <div class="demo-caption">Demo: warehouse localization with LiDAR-intensity map visualization and real-robot operation</div>
+            </div>
+            <div class="content">
+              <ul>
+                <li><b>Intensity calibration:</b> built incident-angle/range-aware reflectivity calibration and keyframe-derived intensity priormaps that remain pose-consistent with the geometric map.</li>
+                <li><b>Global hypothesis ranking:</b> implemented 20×60 Intensity Scan Context with bounded candidate/yaw prescoring before small-GICP geometric acceptance.</li>
+                <li><b>Validation:</b> instrumented intensity MAE/RMSE and localization diagnostics; Recall@K, false-match, pose-error, and perturbation evaluation is in progress.</li>
+              </ul>
+              <div class="tag-row">
+                <span class="tag">Intensity Scan Context</span><span class="tag">Priormap</span><span class="tag">small-GICP</span><span class="tag">Relocalization</span>
+              </div>
+            </div>
           </div>
         </div>
 
-        <!-- Project 1 -->
-        <div class="item">
+        <div class="item" id="visual-lio">
           <div class="row">
-            <span class="where">Autonomous Forklifts (AFL)</span>
+            <span class="where">Camera–LiDAR Integration and Visual-Aided LIO</span>
+            <span class="when">Ongoing Prototype</span>
+          </div>
+          <div class="sub">Visual/depth cues as support for a LiDAR–inertial localization backbone</div>
+
+          <div class="pipeline" aria-label="Visual-aided LIO pipeline">
+            <span>LIO pose backbone</span><i class="fa-solid fa-arrow-right"></i>
+            <span>RGB-D / depth sync</span><i class="fa-solid fa-arrow-right"></i>
+            <span>Visual feature projection</span><i class="fa-solid fa-arrow-right"></i>
+            <span>Keyframe visual maps</span>
+          </div>
+
+          <ul>
+            <li>Defined camera–LiDAR mounting and TF integration with LIO-SAM retained as the authoritative robot pose, avoiding competing VIO TF trees.</li>
+            <li>Added synchronized RGB-D/depth-supported feature projection with timing, FOV/depth association, confidence, conflict, and occlusion diagnostics for controlled visual weighting.</li>
+            <li>Persisted per-keyframe visual depth/RGB and corner/surface/pole clouds and rebuilt global visual maps; asynchronous RGB updates preserve depth/feature processing when color arrives later.</li>
+          </ul>
+        </div>
+
+        <details class="tech-details">
+          <summary>Localization stack reliability &amp; optimization details</summary>
+          <div class="details-body">
+            <ul>
+              <li>Improved a LIO-SAM / SC-LIO-SAM-derived ROS 2 stack with GTSAM/iSAM2, IMU-preintegration recovery, scan-to-map safeguards, abnormal-motion diagnostics, and map-integrity protection.</li>
+              <li>Added Hessian damping, Cholesky/SVD fallback, degeneracy projection, bounded optimization updates, and rollback for ill-conditioned scan-to-map cases.</li>
+              <li>Controlled single-factory-bag A/B testing reduced mean localization cycle time from 45.75 to 42.49 ms (7.1%) and P95 from 64.11 to 60.52 ms (5.6%); repeat-bag validation remains pending.</li>
+            </ul>
+          </div>
+        </details>
+
+        <div class="item" id="forklift-localization">
+          <div class="row">
+            <span class="where">Autonomous Forklift System Development &amp; Validation</span>
             <span class="when">Nov 2024 · Oct 2025</span>
           </div>
-          <div class="sub">Mobyus Future Tech R&amp;D Lab</div>
+          <div class="sub">Mobyus Future Tech R&amp;D Lab · real warehouse hardware</div>
 
-          <!-- Key lines (HR + hiring manager) -->
-          <div class="sub" style="margin-top:8px;">
-            <b>Key results:</b> ≤30 mm SLAM position error (testbeds); pallet-hole detection @ 4 m with ~0.5° angular error.
-            <span style="display:block; margin-top:6px;"><b>My role:</b> algorithm design/implementation, integration on real platforms, and evaluation/validation.</span>
-            <span style="display:block; margin-top:6px;"><b>Tech:</b> ROS 2, LiDAR, IMU, RGB-D (RealSense), stereo (ZED2i), SICK LiDAR, SICK Visionary-T Mini, PCL/OpenCV, PyTorch.</span>
-          </div>
-
-          <!-- Row 1 -->
-          <div class="project-media afl-row">
+          <div class="project-media">
             <div class="media-col">
               <div class="media">
-                <video controls preload="metadata" playsinline>
+                <video controls preload="metadata" playsinline poster="/assets/AFL_DEMO1_poster.jpg">
                   <source src="/assets/videos/AFL_DEMO1.mp4" type="video/mp4">
                   Your browser does not support the video tag.
                 </video>
               </div>
-              <div class="demo-caption">Demo: autonomous forklift navigation + docking (planning/control + SLAM)</div>
+              <div class="demo-caption">Demo: autonomous forklift localization, navigation, and docking</div>
             </div>
-
             <div class="content">
               <ul>
-                <li><b>Navigation &amp; control:</b> developed Frenet-frame optimal-trajectory planning with B-spline smoothing for obstacle avoidance and precise docking; implemented a three-wheeled controller on an AFL platform (SD-type motors).</li>
-                <li><b>State estimation (SLAM):</b> built a local mapping + localization pipeline integrating LiDAR/IMU with ESKF; tuned for stable pose and reliable operation in real deployments; integrated PLC-triggered behaviors for production workflows.</li>
+                <li><b>Localization:</b> built and validated an ESKF-based LiDAR–IMU localization stack, achieving ≤30 mm position error in controlled testbed evaluation.</li>
+                <li><b>Calibration:</b> implemented camera-to-ground projective calibration and planar LiDAR/base SE(2) trajectory calibration with before/after position/yaw RMSE reporting.</li>
+                <li><b>Autonomy integration:</b> integrated localization with navigation, Frenet/B-spline trajectory tracking, PLC workflows, and real-robot validation.</li>
               </ul>
             </div>
           </div>
 
-          <!-- Row 2 -->
           <div class="project-media afl-row">
             <div class="media-col">
               <div class="media">
-                <video controls preload="metadata" playsinline>
+                <video controls preload="metadata" playsinline poster="/assets/AFL_avoidance_poster.jpg">
                   <source src="/assets/videos/AFL_avoidance.mp4" type="video/mp4">
                   Your browser does not support the video tag.
                 </video>
               </div>
-              <div class="demo-caption">Demo: depth camera + LiDAR fusion for obstacle detection and safe navigation</div>
+              <div class="demo-caption">Demo: depth camera + LiDAR obstacle detection and avoidance</div>
             </div>
-
             <div class="content">
               <ul>
-                <li><b>Perception &amp; fusion:</b> developed obstacle detection using sensor fusion of RealSense D435f depth data and a 2D SICK LiDAR to improve robustness under occlusion and dynamic scenes.</li>
-                <li><b>Validation:</b> stress-tested detection behavior and navigation safety in real aisles with moving objects and varied lighting/reflective surfaces.</li>
+                <li><b>Perception support:</b> fused RealSense D435f depth data with 2D LiDAR for obstacle detection and navigation safety under occlusion, moving objects, and reflective surfaces.</li>
               </ul>
             </div>
           </div>
 
-          <!-- Row 3 -->
           <div class="project-media afl-row">
             <div class="media-col">
               <div class="media">
-                <video controls preload="metadata" playsinline>
+                <video controls preload="metadata" playsinline poster="/assets/AFL_pallet_perception_poster.jpg">
                   <source src="/assets/videos/AFL_pallet_perception.mp4" type="video/mp4">
                   Your browser does not support the video tag.
                 </video>
               </div>
-              <div class="demo-caption">Demo: pallet-hole center estimation (Visionary-T Mini) + truck free-space estimation (ZED2i)</div>
+              <div class="demo-caption">Demo: pallet-hole keypoints and truck free-space perception</div>
             </div>
-
             <div class="content">
               <ul>
-                <li><b>Precision perception:</b> developed pallet-stacking perception using SICK Visionary-T Mini; estimated pallet size and fork-pocket (hole) centers with a transformer-based model + CAD prior for precise insertion/alignment.</li>
-                <li><b>Scene understanding:</b> built truck/trailer free-space perception using ZED2i stereo and object detectors (YOLOv12, RF-DETR) to estimate available loading space and placement feasibility.</li>
+                <li><b>Precision perception:</b> developed pallet fork-pocket keypoint estimation and pallet sizing using SICK Visionary-T Mini with learned keypoints and geometric constraints; validated detection at 4 m with ~0.5° angular error.</li>
+                <li><b>Free-space estimation:</b> used ZED2i stereo and object detection to estimate available loading space in truck/trailer scenes.</li>
               </ul>
             </div>
           </div>
         </div>
 
-        <!-- Project 2 -->
-        <div class="item">
-          <div class="row">
-            <span class="where">Continental Intelligent Intersection <span style="font-weight:500; opacity:.75;">— co-sponsored by Continental AG</span></span>
-            <span class="when">Sep 2018 · Jun 2019</span>
-          </div>
-          <div class="sub">Capstone / Research Project</div>
+        <h2 class="section-heading">Earlier robotics &amp; perception work</h2>
 
-          <div class="project-media">
-            <div class="media">
-              <video controls preload="metadata" playsinline>
-                <source src="/assets/videos/Continental.mp4" type="video/mp4">
-                Your browser does not support the video tag.
-              </video>
-              <div class="demo-caption">Demo: multi-sensor traffic scene understanding (radar + camera) and risk scenario detection</div>
+        <details class="project-archive">
+          <summary>Continental Intelligent Intersection · Sep 2018 – Jun 2019</summary>
+          <div class="project-media archive-media">
+            <div class="media-col">
+              <div class="media">
+                <video controls preload="metadata" playsinline poster="/assets/Continental_poster.jpg">
+                  <source src="/assets/videos/Continental.mp4" type="video/mp4">
+                </video>
+              </div>
             </div>
-
             <div class="content">
               <ul>
-                <li><b>ML/CV modeling:</b> evaluated CNN/RNN/SVM/HMM approaches for traffic-scene understanding and critical scenario prediction.</li>
-                <li><b>Object detection:</b> customized YOLOv3 for project-specific detection targets; built training and inference utilities using Python + OpenCV.</li>
-                <li><b>Sensor data pipeline:</b> implemented data preparation and training workflow using radar (short/long range) and camera data for labeled scenario detection.</li>
+                <li>Evaluated CNN/RNN/SVM/HMM approaches for traffic-scene understanding and critical-scenario prediction.</li>
+                <li>Customized YOLOv3 and built radar/camera data preparation, training, and evaluation workflows.</li>
               </ul>
             </div>
           </div>
-        </div>
+        </details>
 
-        <!-- Project 3 -->
-        <div class="item">
-          <div class="row">
-            <span class="where">Autonomous Robot</span>
-            <span class="when">Apr 2019 · Jun 2019</span>
-          </div>
-          <div class="sub">Embedded Systems / Robotics Project</div>
-
-          <div class="project-media">
-            <div class="media">
-              <video controls preload="metadata" playsinline>
-                <source src="/assets/videos/Mechatronics.mp4" type="video/mp4">
-                Your browser does not support the video tag.
-              </video>
-              <div class="demo-caption">Demo: embedded autonomy (state machine, sensing, actuation) with rapid iteration under deadlines</div>
+        <details class="project-archive">
+          <summary>Autonomous Mechatronics Robot · Apr 2019 – Jun 2019</summary>
+          <div class="project-media archive-media">
+            <div class="media-col">
+              <div class="media">
+                <video controls preload="metadata" playsinline poster="/assets/Mechatronics_poster.jpg">
+                  <source src="/assets/videos/Mechatronics.mp4" type="video/mp4">
+                </video>
+              </div>
             </div>
-
             <div class="content">
               <ul>
-                <li>Built an autonomous robot using Uno32, servos, DC motors, and sensors to navigate a standardized field, use obstacles strategically, and shoot ping-pong ball ammo.</li>
-                <li>Designed a spring-based shooting mechanism and developed a test harness for electrical components.</li>
-                <li>Constructed and programmed a hierarchical state machine (HSM) using Embedded C.</li>
-                <li>Calibrated sensors (tape sensor, beacon detector, track wire) and tested the robot for stability.</li>
+                <li>Built a real autonomous robot with Uno32, DC motors, servos, optical/IR sensing, custom signal-conditioning circuits, and an event-driven hierarchical state machine in Embedded C.</li>
+                <li>Integrated synchronous sensor sampling, H-bridge/PWM motor control, obstacle handling, and end-to-end hardware/software testing.</li>
               </ul>
             </div>
           </div>
-        </div>
-
+        </details>
       </section>
     </div>
   </main>
