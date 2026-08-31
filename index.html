@@ -3,13 +3,14 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Won Ko</title>
+  <meta name="description" content="Won Ko — Localization and SLAM engineer working on LiDAR-visual-inertial localization, state estimation, calibrated LiDAR intensity, and real-robot autonomy." />
+  <title>Won Ko · Localization & SLAM</title>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-  <link rel="stylesheet" href="assets/styles.css">
+  <link rel="stylesheet" href="/assets/styles.css?v=22">
 </head>
 
 <body>
@@ -28,20 +29,17 @@
   <main class="wrap">
     <div class="grid">
       <aside class="card sidebar">
-        <img class="avatar" src="assets/profile.jpg" alt="Profile photo">
+        <img class="avatar" src="/assets/profile.jpg" alt="Profile photo">
         <div class="name">Won Ko</div>
-        <div class="title">AI/ML • Robotics and Control • Mechatronics • Sensor Fusion • Computer Vision • SLAM</div>
+        <div class="title">Localization &amp; SLAM • Sensor Fusion • State Estimation • Autonomous Robotics</div>
 
         <ul class="meta">
           <li><i class="fa-solid fa-location-dot"></i><span>Seoul, South Korea</span></li>
           <li><i class="fa-solid fa-building-columns"></i>
             <span><span>Senior Researcher</span><br><span>Mobyus Future Tech R&amp;D Lab</span></span>
           </li>
-          <li><i class="fa-solid fa-building-columns"></i>
-            <span><span>M.S in Computer Engineering</span><br><span>UC Santa Cruz</span></span>
-          </li>
-          <li><i class="fa-solid fa-building-columns"></i>
-            <span><span>B.S in Computer Engineering</span><br><span>UC Santa Cruz</span></span>
+          <li><i class="fa-solid fa-graduation-cap"></i>
+            <span><span>M.S. / B.S. Computer Engineering</span><br><span>UC Santa Cruz</span></span>
           </li>
           <li><i class="fa-solid fa-envelope"></i><span><a href="mailto:kowon861@gmail.com">kowon861@gmail.com</a></span></li>
           <li><i class="fa-brands fa-github"></i><span><a href="https://github.com/Won-Ko">GitHub</a></span></li>
@@ -49,55 +47,77 @@
       </aside>
 
       <section class="card main">
+        <div class="hero-kicker">Localization · State Estimation · Multi-Sensor Robotics</div>
         <h1>About</h1>
 
-        <p class="lead">
-          I’m a <b>Senior Researcher</b> building autonomy and 3D perception systems for mobile robots—multi-sensor fusion,
-          state estimation (SLAM), and motion planning/control—with an emphasis on reliable behavior on real hardware.
+        <p class="lead hero-lead">
+          I’m a <b>Senior Researcher in autonomous robotics</b> focused on LiDAR–visual–inertial localization,
+          state estimation, and robust multi-sensor localization. My recent work combines LIO-SAM / SC-LIO-SAM,
+          GTSAM/iSAM2, calibrated LiDAR intensity, and visual/depth support for localization on real AMR and autonomous-forklift platforms.
         </p>
 
-        <p class="results">
-          <b>Recent results:</b> ≤30 mm 3D SLAM position error (testbeds); pallet-hole detection at 4 m with ~0.5° angular error.
-        </p>
+        <div class="cta-row">
+          <a class="button primary" href="/projects/">View Localization Projects</a>
+          <a class="button" href="/assets/cv.pdf?v=22" download>Download 2-page CV</a>
+        </div>
 
-        <p class="about-story">
-          I chose robotics because it lives at the intersection of algorithms and reality: the math can be clean,
-          but deployment never is.
-        </p>
+        <div class="metric-grid">
+          <div class="metric-card">
+            <div class="metric-value">≤30 mm</div>
+            <div class="metric-label">controlled forklift localization testbed position error</div>
+          </div>
+          <div class="metric-card">
+            <div class="metric-value">LiDAR + Vision + IMU</div>
+            <div class="metric-label">multi-sensor localization and integration focus</div>
+          </div>
+          <div class="metric-card">
+            <div class="metric-value">ROS 2 · Real Robots</div>
+            <div class="metric-label">AMR and autonomous-forklift deployment &amp; validation</div>
+          </div>
+        </div>
 
         <hr class="section-divider">
 
-        <h2>Current focus</h2>
-        <ul>
-          <li><b>3D SLAM:</b> LiDAR–inertial odometry (LIO) and visual–inertial odometry (VIO/VSLAM) for robust localization and mapping.</li>
-          <li><b>Sensor calibration algorithms:</b> LiDAR↔IMU extrinsic calibration, Camera↔IMU extrinsic calibration, and joint calibration across LiDAR, IMU, and camera.</li>
-          <li><b>Navigation:</b> integrating perception + estimation into planning/control for safe, repeatable motion in dynamic environments.</li>
-          <li><b>Perception:</b> camera + LiDAR fusion for obstacle detection and scene understanding to support navigation and measurement tasks.</li>
-          <li><b>System validation:</b> prototyping and evaluation in ROS 2 with a focus on measurable accuracy and real-world reliability.</li>
+        <h2>Selected current work</h2>
+        <div class="focus-grid">
+          <a class="focus-card" href="/projects/#intensity-localization">
+            <div class="focus-icon"><i class="fa-solid fa-wave-square"></i></div>
+            <h3>Intensity-Assisted Localization</h3>
+            <p>Calibrated LiDAR-intensity priormaps, Intensity Scan Context hypothesis prescoring, and small-GICP geometric validation for repetitive warehouse environments.</p>
+          </a>
+          <a class="focus-card" href="/projects/#visual-lio">
+            <div class="focus-icon"><i class="fa-solid fa-camera"></i></div>
+            <h3>Visual-Aided LIO</h3>
+            <p>Synchronized RGB-D / depth-supported visual feature projection and keyframe persistence while keeping the LiDAR–inertial pose backbone authoritative.</p>
+          </a>
+          <a class="focus-card" href="/projects/#forklift-localization">
+            <div class="focus-icon"><i class="fa-solid fa-robot"></i></div>
+            <h3>Real-Robot Localization</h3>
+            <p>ESKF-based LiDAR–IMU localization, calibration, navigation integration, and quantitative validation on autonomous forklifts.</p>
+          </a>
+        </div>
+
+        <hr class="section-divider">
+
+        <h2>Technical focus</h2>
+        <ul class="compact-list">
+          <li><b>Localization / SLAM:</b> LIO-SAM, SC-LIO-SAM, LVI-SAM evaluation / LIO–VIO integration, relocalization, GICP, Scan Context.</li>
+          <li><b>State estimation / optimization:</b> GTSAM/iSAM2, IMU preintegration, ESKF/EKF/Kalman filtering, nonlinear least-squares, LOAM-style scan-to-map optimization and degeneracy handling.</li>
+          <li><b>Visual / intensity support:</b> RGB-D visual feature integration, depth-supported 3D features, Intensity Scan Context, and calibrated LiDAR-intensity priormaps.</li>
+          <li><b>Calibration / sensor integration:</b> inertial-sensor calibration, monocular camera calibration, PnP/RANSAC 2D–3D pose estimation, planar LiDAR/base SE(2), synchronization, and TF integration.</li>
         </ul>
 
         <hr class="section-divider">
 
         <h2>Research interests</h2>
-        <ul>
-          <li><b>Autonomous systems:</b> building reliable autonomy that connects perception, estimation, and decision-making with measurable safety and robustness in real deployments.</li>
-
-          <li><b>Guidance, Navigation &amp; Control (GNC):</b> motion control and navigation under uncertainty, including trajectory tracking, system modeling, and robust control for real platforms.</li>
-
-          <li><b>Multi-modal sensor fusion for 3D measurement:</b> camera/depth/LiDAR/radar/IMU fusion with calibration, time synchronization, and uncertainty-aware estimation.</li>
-
-          <li><b>3D perception for precision tasks:</b> detection, segmentation, keypoints, dense depth, and reconstruction with quantitative evaluation (accuracy, latency, robustness).</li>
-
-          <li><b>Perception-aware planning &amp; safety:</b> decision-making under uncertainty (belief-aware / stochastic ideas) paired with verifiable safety mechanisms (e.g., safety shields / CBF-style constraints).</li>
-
-          <li><b>Spatial AI roadmap (future direction):</b> <span class="roadmap">VSLAM → 3D space reconstruction → Spatial AI → VLM/VLA</span>
-            to ground semantic understanding in 3D and enable reliable vision–language–action for <b>inspection</b> and <b>precision measurement</b> workflows.</li>
-
-          <li><b>Sim-to-real robustness:</b> domain randomization, data-efficient adaptation, and active learning to reduce retuning in changing environments.</li>
+        <ul class="compact-list">
+          <li><b>Robust localization:</b> global localization and relocalization in repetitive or geometrically ambiguous environments.</li>
+          <li><b>Multi-sensor state estimation:</b> combining geometric, visual, inertial, and calibrated-intensity cues with explicit failure handling.</li>
+          <li><b>Calibration &amp; observability:</b> spatial/temporal sensor alignment and quantitative validation of calibration quality.</li>
+          <li><b>Navigation under uncertainty:</b> stochastic estimation and control for reliable autonomous systems on real hardware.</li>
         </ul>
       </section>
     </div>
   </main>
 </body>
 </html>
-
