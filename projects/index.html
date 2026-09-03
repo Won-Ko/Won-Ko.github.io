@@ -185,6 +185,43 @@
           </div>
         </div>
 
+        <div class="item" id="tricycle-stochastic-dp">
+          <div class="row">
+            <span class="where">Autonomously Driving Tricycle with Monocular Vision</span>
+            <span class="when">M.S. Project · UC Santa Cruz</span>
+          </div>
+          <div class="sub">Vision-based state estimation and stochastic optimal control for GPS-free autonomous navigation</div>
+
+          <div class="project-media">
+            <div class="media-col">
+              <div class="media">
+                <video controls preload="metadata" playsinline>
+                  <source src="/assets/videos/stochastic_DP_controller.mp4" type="video/mp4">
+                  Your browser does not support the video tag.
+                </video>
+              </div>
+              <div class="demo-caption">Demo: stochastic Dynamic Programming / HJB policy execution in V-REP simulation</div>
+            </div>
+
+            <div class="content">
+              <ul>
+                <li><b>State estimation:</b> used monocular vision with EKF / nonlinear state estimation to estimate pose, velocity, and heading under measurement and model uncertainty.</li>
+                <li><b>Camera calibration:</b> implemented single-pose and two-pose monocular calibration using projective geometry and least-squares estimation.</li>
+                <li><b>Stochastic optimal control:</b> implemented stochastic Dynamic Programming / HJB value iteration using robot-frame relative position and terminal heading to compute a minimum-time / control-effort policy.</li>
+                <li><b>System integration:</b> connected vision-based state estimation with the stochastic controller and validated closed-loop autonomous navigation in simulation.</li>
+              </ul>
+
+              <div class="tag-row">
+                <span class="tag">Monocular Vision</span>
+                <span class="tag">EKF</span>
+                <span class="tag">Stochastic DP</span>
+                <span class="tag">HJB</span>
+                <span class="tag">Optimal Control</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
         <h2 class="section-heading">Earlier robotics &amp; perception work</h2>
 
         <details class="project-archive">
