@@ -185,6 +185,48 @@
           </div>
         </div>
 
+
+        <div class="item" id="continental-intelligent-intersection">
+          <div class="row">
+            <span class="where">Continental Intelligent Intersection - Real-World Vehicle Data</span>
+            <span class="when">Sep 2018 · Jun 2019</span>
+          </div>
+          <div class="sub">Continental-sponsored UC Santa Cruz project · radar/camera environment-model data from a real Walnut Creek intersection</div>
+
+          <div class="project-media">
+            <div class="media-col">
+              <div class="media">
+                <a href="/projects/#continental-intelligent-intersection"
+                   aria-label="Open Continental Intelligent Intersection project">
+                  <img src="/assets/videos/critical_scenarios.gif"
+                       alt="Continental Intelligent Intersection critical-scenario visualization"
+                       style="width:100%; height:auto; display:block; border-radius:10px;">
+                </a>
+              </div>
+              <div class="demo-caption">
+                Critical-scenario visualization from the Continental Intelligent Intersection project
+              </div>
+            </div>
+
+            <div class="content">
+              <ul>
+                <li><b>Real-world sensor data:</b> worked on a team project using Continental-provided temporal radar environment-model data and camera footage from a real intelligent-intersection test site.</li>
+                <li><b>Trajectory preprocessing:</b> processed timestamped object trajectories using object ID, x/y position, velocity, heading, object type, and time-in-intersection features; built turn-direction labeling and cleaning around crosswalk line-segment intersections.</li>
+                <li><b>Sequence prediction:</b> evaluated classical machine-learning and LSTM models for driver-intent / vehicle-trajectory prediction; team results reported 89.5% before-intersection and 98.6% after-intersection accuracy for the best LSTM configuration.</li>
+                <li><b>Safety reasoning:</b> connected predicted vehicle intent and path geometry to critical scenarios including vehicle-path crossings, shared exit/lane conflicts, and vehicle-pedestrian crosswalk conflicts.</li>
+              </ul>
+
+              <div class="tag-row">
+                <span class="tag">Real-World Data</span>
+                <span class="tag">Radar + Camera</span>
+                <span class="tag">LSTM</span>
+                <span class="tag">Trajectory Prediction</span>
+                <span class="tag">Critical Scenarios</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
         <div class="item" id="v2v-collision-avoidance">
           <div class="row">
             <span class="where">V2V Multi-Robot Collision Avoidance</span>
@@ -260,27 +302,7 @@
         </div>
 
         <h2 class="section-heading">Earlier robotics &amp; perception work</h2>
-
-        <details class="project-archive">
-          <summary>Continental Intelligent Intersection · Sep 2018 – Jun 2019</summary>
-          <div class="project-media archive-media">
-            <div class="media-col">
-              <div class="media">
-                <video controls preload="metadata" playsinline poster="/assets/Continental_poster.jpg">
-                  <source src="/assets/videos/Continental.mp4" type="video/mp4">
-                </video>
-              </div>
-            </div>
-            <div class="content">
-              <ul>
-                <li>Evaluated CNN/RNN/SVM/HMM approaches for traffic-scene understanding and critical-scenario prediction.</li>
-                <li>Customized YOLOv3 and built radar/camera data preparation, training, and evaluation workflows.</li>
-              </ul>
-            </div>
-          </div>
-        </details>
-
-        <details class="project-archive">
+<details class="project-archive">
           <summary>Autonomous Mechatronics Robot · Apr 2019 – Jun 2019</summary>
           <div class="project-media archive-media">
             <div class="media-col">
